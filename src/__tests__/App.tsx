@@ -30,7 +30,7 @@ import App from '../App';
 const apiMock = new MockAdapter(api);
 
 const wait = (amount = 0): Promise<void> => {
-  return new Promise((resolve) => setTimeout(resolve, amount));
+  return new Promise(resolve => setTimeout(resolve, amount));
 };
 
 const actWait = async (amount = 0): Promise<void> => {
@@ -200,7 +200,7 @@ describe('Dashboard', () => {
     await actWait();
 
     const input = getByTestId('upload');
-
+    /* eslint-disable */
     const file = new File(
       [
         'title, type, value, category\
@@ -213,7 +213,7 @@ describe('Dashboard', () => {
         type: 'text/csv',
       },
     );
-
+    /* eslint-enable */
     Object.defineProperty(input, 'files', {
       value: [file],
     });
