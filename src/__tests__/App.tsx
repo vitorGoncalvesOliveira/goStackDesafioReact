@@ -200,7 +200,7 @@ describe('Dashboard', () => {
     await actWait();
 
     const input = getByTestId('upload');
-    /* eslint-disable */
+
     const file = new File(
       [
         'title, type, value, category\
@@ -213,7 +213,7 @@ describe('Dashboard', () => {
         type: 'text/csv',
       },
     );
-    /* eslint-enable */
+
     Object.defineProperty(input, 'files', {
       value: [file],
     });
